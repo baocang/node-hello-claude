@@ -24,13 +24,13 @@ node-hello-claude/
 
 ### File Responsibilities
 
-| File | Role |
-|------|------|
-| `bin/hello-claude.js` | Executable entry point. Has `#!/usr/bin/env node` shebang. Imports and runs `src/cli.js`. Kept minimal — no logic here. |
-| `src/cli.js` | Defines CLI commands and options using `commander`. Parses `--name`, `--lang`, `--uppercase` flags. Calls `greeter` with parsed args. Handles output to stdout. |
-| `src/greeter.js` | Pure function module. Takes a name and language code, returns a greeting string. Contains the language map. No side effects. |
-| `src/config.js` | Reads `HELLO_CLAUDE_LANG` and `HELLO_CLAUDE_NAME` env vars. Merges env vars with CLI args (CLI wins). Exports a `loadConfig(cliOptions)` function. |
-| `tests/*.test.js` | Jest test files mirroring `src/` modules. |
+| File                  | Role                                                                                                                                                            |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `bin/hello-claude.js` | Executable entry point. Has `#!/usr/bin/env node` shebang. Imports and runs `src/cli.js`. Kept minimal — no logic here.                                         |
+| `src/cli.js`          | Defines CLI commands and options using `commander`. Parses `--name`, `--lang`, `--uppercase` flags. Calls `greeter` with parsed args. Handles output to stdout. |
+| `src/greeter.js`      | Pure function module. Takes a name and language code, returns a greeting string. Contains the language map. No side effects.                                    |
+| `src/config.js`       | Reads `HELLO_CLAUDE_LANG` and `HELLO_CLAUDE_NAME` env vars. Merges env vars with CLI args (CLI wins). Exports a `loadConfig(cliOptions)` function.              |
+| `tests/*.test.js`     | Jest test files mirroring `src/` modules.                                                                                                                       |
 
 ## Module Responsibilities
 
@@ -79,16 +79,16 @@ node-hello-claude/
 
 ## Design Decisions
 
-| Decision | Rationale |
-|----------|-----------|
-| **`commander` for CLI parsing** | Mature, well-documented, lightweight. Auto-generates `--help`. Standard choice for Node.js CLIs. |
-| **Separate `bin/` from `src/`** | `bin/` is the executable shim; `src/` holds all logic. Enables testing without spawning a process. |
-| **Pure `greeter` module** | No I/O makes it trivially testable. Easy to extend with new languages. |
-| **Config merging in dedicated module** | Single place to understand config precedence. CLI args override env vars override defaults. |
-| **Jest for testing** | Zero-config for Node.js. Built-in mocking. Fast. |
-| **ESLint (no Prettier)** | Keeps tooling minimal. ESLint handles both linting and basic formatting. |
-| **No TypeScript** | Keeps the project simple and avoids a build step. Appropriate for a small CLI tool. |
-| **Throws on bad language** | Fail-fast behavior. CLI layer catches and prints a user-friendly error with exit code 1. |
+| Decision                               | Rationale                                                                                          |
+| -------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| **`commander` for CLI parsing**        | Mature, well-documented, lightweight. Auto-generates `--help`. Standard choice for Node.js CLIs.   |
+| **Separate `bin/` from `src/`**        | `bin/` is the executable shim; `src/` holds all logic. Enables testing without spawning a process. |
+| **Pure `greeter` module**              | No I/O makes it trivially testable. Easy to extend with new languages.                             |
+| **Config merging in dedicated module** | Single place to understand config precedence. CLI args override env vars override defaults.        |
+| **Jest for testing**                   | Zero-config for Node.js. Built-in mocking. Fast.                                                   |
+| **ESLint (no Prettier)**               | Keeps tooling minimal. ESLint handles both linting and basic formatting.                           |
+| **No TypeScript**                      | Keeps the project simple and avoids a build step. Appropriate for a small CLI tool.                |
+| **Throws on bad language**             | Fail-fast behavior. CLI layer catches and prints a user-friendly error with exit code 1.           |
 
 ## Data Flow
 

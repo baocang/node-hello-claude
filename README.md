@@ -103,29 +103,29 @@ $ hello-claude list-languages
 
 ## Commands
 
-| Command | Description |
-|---------|-------------|
-| `greet [name]` | Greet someone in a specified language. Defaults to `World` if no name given. |
-| `list-languages` | List all supported languages with example greetings. |
+| Command          | Description                                                                  |
+| ---------------- | ---------------------------------------------------------------------------- |
+| `greet [name]`   | Greet someone in a specified language. Defaults to `World` if no name given. |
+| `list-languages` | List all supported languages with example greetings.                         |
 
 ## Options for `greet`
 
-| Option | Alias | Description | Default |
-|--------|-------|-------------|---------|
-| `--lang <lang>` | `-l` | Language code for the greeting | `en` |
-| `--format <format>` | `-f` | Output format: `plain`, `json`, or `emoji` | `plain` |
-| `--upper` | `-u` | Output the greeting in uppercase | `false` |
+| Option              | Alias | Description                                | Default |
+| ------------------- | ----- | ------------------------------------------ | ------- |
+| `--lang <lang>`     | `-l`  | Language code for the greeting             | `en`    |
+| `--format <format>` | `-f`  | Output format: `plain`, `json`, or `emoji` | `plain` |
+| `--upper`           | `-u`  | Output the greeting in uppercase           | `false` |
 
 ## Supported Languages
 
-| Code | Language | Example Greeting |
-|------|----------|-----------------|
-| `en` | English | Hello, World! |
-| `es` | Spanish | ¡Hola, World! |
-| `fr` | French | Bonjour, World! |
-| `de` | German | Hallo, World! |
+| Code | Language | Example Greeting    |
+| ---- | -------- | ------------------- |
+| `en` | English  | Hello, World!       |
+| `es` | Spanish  | ¡Hola, World!       |
+| `fr` | French   | Bonjour, World!     |
+| `de` | German   | Hallo, World!       |
 | `ja` | Japanese | こんにちは、World！ |
-| `zh` | Chinese | 你好，World！ |
+| `zh` | Chinese  | 你好，World！       |
 
 ## Output Formats
 
@@ -163,9 +163,9 @@ Greeting wrapped with language-specific emoji flags:
 
 Configure defaults via environment variables. CLI flags always take precedence over environment variables.
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `HELLO_CLAUDE_LANG` | Default language code | `en` |
+| Variable            | Description           | Default |
+| ------------------- | --------------------- | ------- |
+| `HELLO_CLAUDE_LANG` | Default language code | `en`    |
 | `HELLO_CLAUDE_NAME` | Default name to greet | `World` |
 
 **Precedence order** (highest to lowest):

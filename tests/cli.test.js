@@ -2,16 +2,16 @@ const { run } = require('../src/cli');
 
 describe('CLI integration tests', () => {
   let stdoutData;
-  let stderrData;
   const originalWrite = process.stdout.write;
   const originalErrWrite = process.stderr.write;
   const originalExitCode = process.exitCode;
 
   beforeEach(() => {
     stdoutData = '';
-    stderrData = '';
-    process.stdout.write = (data) => { stdoutData += data; };
-    process.stderr.write = (data) => { stderrData += data; };
+    process.stdout.write = (data) => {
+      stdoutData += data;
+    };
+    process.stderr.write = () => {};
     process.exitCode = undefined;
   });
 

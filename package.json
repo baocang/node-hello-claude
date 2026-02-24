@@ -10,13 +10,60 @@
     "start": "node bin/hello-claude.js",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "lint": "eslint src/ tests/ bin/"
+    "lint": "eslint src/ tests/ bin/",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "cli",
+    "greeting",
+    "hello",
+    "multilingual",
+    "i18n",
+    "commander"
+  ],
+  "homepage": "https://github.com/baocang/node-hello-claude#readme",
+  "bugs": {
+    "url": "https://github.com/baocang/node-hello-claude/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baocang/node-hello-claude.git"
+  },
+  "license": "MIT",
+  "files": [
+    "bin/",
+    "src/",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
   "dependencies": {
     "commander": "^12.0.0"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.2",
+    "globals": "^17.3.0",
     "jest": "^29.0.0",
-    "eslint": "^8.0.0"
+    "prettier": "^3.8.1"
+  },
+  "overrides": {
+    "minimatch": "^10.2.1",
+    "glob": "^11.0.0",
+    "rimraf": "^6.0.0"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "statements": 90,
+        "branches": 75,
+        "functions": 95,
+        "lines": 90
+      }
+    }
   }
 }

@@ -23,9 +23,12 @@ describe('greet()', () => {
     ['zh', '你好，World！'],
   ];
 
-  test.each(defaultNameCases)('returns correct greeting with name "World" for lang=%s', (lang, expected) => {
-    expect(greet('World', lang)).toBe(expected);
-  });
+  test.each(defaultNameCases)(
+    'returns correct greeting with name "World" for lang=%s',
+    (lang, expected) => {
+      expect(greet('World', lang)).toBe(expected);
+    }
+  );
 
   test('throws an error for unsupported language code', () => {
     expect(() => greet('Alice', 'xx')).toThrow('Unsupported language: "xx"');
