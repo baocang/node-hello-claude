@@ -1,0 +1,22 @@
+{
+  "name": "hello-claude",
+  "version": "1.0.0",
+  "description": "A production-ready CLI that greets users in multiple languages",
+  "main": "src/cli.js",
+  "bin": {
+    "hello-claude": "./bin/hello-claude.js"
+  },
+  "scripts": {
+    "start": "node bin/hello-claude.js",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/ tests/ bin/"
+  },
+  "dependencies": {
+    "commander": "^12.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "eslint": "^8.0.0"
+  }
+}

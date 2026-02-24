@@ -1,0 +1,5 @@
+{
+  "scm.defaultViewMode": "tree",
+  "workbench.tree.indent": 20,
+  "scm.diffDecorationsGutterVisibility": "always"
+}
